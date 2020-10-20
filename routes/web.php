@@ -11,6 +11,21 @@
 |
 */
 
+// use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('layout.principal');
+})->name('principal');
+
+Route::resource('aluno', 'AlunoController');
+
+Route::get('escola', 'EscolaController@index')->name('escola.index');
+Route::post('escola', 'EscolaController@store')->name('aluno.store');
+Route::get('escola/create', 'EscolaController@create')->name('escola.create');
+Route::get('escola/{escola}', 'EscolaController@show')->name('escola.show');
+Route::put('escola/{escola}', 'EscolaController@update')->name('escola.update');
+Route::delete('escola/{escola}', 'EscolaController@destroy')->name('escola.destroy');
+Route::get('escola/{escola}/edit', 'EscolaController@edit')->name('escola.edit');
+
+Route::resource('turma', 'TurmaController');
