@@ -122,19 +122,18 @@ class AlunoController extends Controller
     {
         $requestData = $request->all();
         $alunoData = [
-            'id' => $requestData['id'],
             'nome' => $requestData['nome'],
             'cpf' => $requestData['cpf'],
             'email' => $requestData['email'],
             'data_nascimento' => $requestData['data_nascimento'],
         ];
         $matriculaData = [
-            'id_aluno' => $requestData['id'],
             'id_turma' => $requestData['id_turma']
         ];
 
         DB::beginTransaction();
         $aluno = Aluno::create($alunoData);
+        $matriculaData['id_aluno'] = $aluno->id;
         $matricula = Matricula::create($matriculaData);
         if ($aluno && $matricula) {
             Session::flash('success', "Registro #{$aluno->id}  salvo com êxito");
@@ -194,7 +193,11 @@ class AlunoController extends Controller
         $idMatricula = $requestData['id_matricula'];
         $matriculaData = [
             'id_aluno' => $id,
-            'id_turma' => $requestData['id_turma']
+            'id_turma' => $requestData['id_turma'],
+            'nota_primeiro_bimestre' => $requestData['nota_primeiro_bimestre'],
+            'nota_segundo_bimestre' => $requestData['nota_segundo_bimestre'],
+            'nota_terceiro_bimestre' => $requestData['nota_terceiro_bimestre'],
+            'nota_quarto_bimestre' => $requestData['nota_quarto_bimestre'],
         ];
 
         DB::beginTransaction();

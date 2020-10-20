@@ -25,11 +25,6 @@
         </div>
         <div class="card-body">
 
-            'turmas.serie',
-            'turmas.ano',
-            'turmas.letra_identificadora',
-            'turmas.fk_escola',
-
             <div class="form-row form-group">
                 {!! Form::label('serie', 'Série', ['class' => 'col-form-label col-sm-2 text-right']) !!}
                 <div class="col-sm-4">

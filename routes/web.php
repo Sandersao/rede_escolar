@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::resource('aluno', 'AlunoController');
 
 Route::get('escola', 'EscolaController@index')->name('escola.index');
-Route::post('escola', 'EscolaController@store')->name('aluno.store');
+Route::post('escola', 'EscolaController@store')->name('escola.store');
 Route::get('escola/create', 'EscolaController@create')->name('escola.create');
 Route::get('escola/{escola}', 'EscolaController@show')->name('escola.show');
 Route::put('escola/{escola}', 'EscolaController@update')->name('escola.update');

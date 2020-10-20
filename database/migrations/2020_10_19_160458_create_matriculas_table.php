@@ -17,10 +17,10 @@ class CreateMatriculasTable extends Migration
             $table->bigIncrements('id');
             $table->integer('id_aluno');
             $table->integer('id_turma');
-            $table->double('nota_primeiro_bimestre');
-            $table->double('nota_segundo_bimestre');
-            $table->double('nota_terceiro_bimestre');
-            $table->double('nota_quarto_bimestre');
+            $table->double('nota_primeiro_bimestre')->nullable();
+            $table->double('nota_segundo_bimestre')->nullable();
+            $table->double('nota_terceiro_bimestre')->nullable();
+            $table->double('nota_quarto_bimestre')->nullable();
             $table->timestamps();
 
             $table->foreign('id_turma')->references('id')->on('turmas');

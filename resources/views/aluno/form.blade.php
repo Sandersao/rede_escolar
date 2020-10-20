@@ -62,6 +62,36 @@
 
             {!! Form::hidden('id_matricula') !!}
 
+            @if (isset($formData['aluno']))
+            <div class="form-row form-group">
+                {!! Form::label('nota_primeiro_bimestre', 'Nota 1º Bimestre', ['class' => 'col-form-label col-sm-2 text-right']) !!}
+                <div class="col-sm-4">
+                    {!! Form::number('nota_primeiro_bimestre', null, ['step' => '0.1', 'min' => '0', 'max' => '10', 'class' => 'form-control', 'placeholder'=>'Defina a nota']) !!}
+                </div>
+            </div>
+
+            <div class="form-row form-group">
+                {!! Form::label('nota_segundo_bimestre', 'Nota 2º Bimestre', ['class' => 'col-form-label col-sm-2 text-right']) !!}
+                <div class="col-sm-4">
+                    {!! Form::number('nota_segundo_bimestre', null, ['step' => '0.1', 'min' => '0', 'max' => '10', 'class' => 'form-control', 'placeholder'=>'Defina a nota']) !!}
+                </div>
+            </div>
+
+            <div class="form-row form-group">
+                {!! Form::label('nota_terceiro_bimestre', 'Nota 3º Bimestre', ['class' => 'col-form-label col-sm-2 text-right']) !!}
+                <div class="col-sm-4">
+                    {!! Form::number('nota_terceiro_bimestre', null, ['step' => '0.1', 'min' => '0', 'max' => '10', 'class' => 'form-control', 'placeholder'=>'Defina a nota']) !!}
+                </div>
+            </div>
+
+            <div class="form-row form-group">
+                {!! Form::label('nota_quarto_bimestre', 'Nota 4º Bimestre', ['class' => 'col-form-label col-sm-2 text-right']) !!}
+                <div class="col-sm-4">
+                    {!! Form::number('nota_quarto_bimestre', null, ['step' => '0.1', 'min' => '0', 'max' => '10', 'class' => 'form-control', 'placeholder'=>'Defina a nota']) !!}
+                </div>
+            </div>
+            @endif
+
         </div>
         <div class="card-footer">
             {!! Form::button('cancelar', ['class'=>'btn btn-danger btn-sm', 'onclick' =>'windo:history.go(-1);']); !!}
